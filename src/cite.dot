@@ -1,0 +1,4 @@
+graph {
+    "Cave de la Cascade" -- "Sentier des nains elphiques"
+    "Sentier des nains elphiques" -- "Impasse du puits"
+}
