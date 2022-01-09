@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         //SPHINXOPTS = '-w sphinx-build.log'
-        DEPLOY_HOST = 'werbroot@colabois.fr'
+        DEPLOY_HOST = 'webroot@colabois.fr'
         //WEBSITE = 'https://moriya.zapto.org'
         PROJECT_NAME = 'champomy-graphe'
         REL_PATH = "/suwako.colabois.fr/champomy/releases/${env.PROJECT_NAME}/"
