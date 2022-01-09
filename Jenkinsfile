@@ -52,7 +52,7 @@ pipeline {
     post {
         success {
             sh 'git clean -fxd'
-            discordSend title: "Nouvelles cartes" footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH, result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "cite-dot.png", webhookURL: env.WEBHOOK_URL
+            discordSend title: "Nouvelles cartes", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH, result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "cite-dot.png", webhookURL: env.WEBHOOK_URL
         }
     }
 }
