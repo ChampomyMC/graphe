@@ -31,7 +31,7 @@ pipeline {
                 }
             }
             steps {
-                sshagent(credentials: ['docs_pk']) {
+                sshagent(credentials: ['pk_webroot']) {
                     sh 'echo ${TAG_NAME:-${GIT_BRANCH#*/}}'
                     sh 'echo ${DEPLOY_HOST}:${DEPLOY_REL_PATH}${TAG_NAME:-${GIT_BRANCH#*/}}/'
                     sh 'ssh -o StrictHostKeyChecking=no -o BatchMode=yes ${DEPLOY_HOST} mkdir -p ${DEPLOY_REL_PATH}${TAG_NAME:-${GIT_BRANCH#*/}}/'
