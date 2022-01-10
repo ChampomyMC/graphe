@@ -1,0 +1,51 @@
+digraph {
+    overlap = false;
+    "Cité de La Géode" [shape=tripleoctagon]
+
+    "Cave de La Cascade" -> "Sentier des nains elphiques"
+    "Sentier des nains elphiques" -> "Cave de La Cascade"
+
+    "Sentier des nains elphiques" -> "Impasse du Puits Paumé"
+    "Impasse du Puits Paumé" -> "Sentier des nains elphiques"
+
+    "Sentier des nains elphiques" -> "Faille du Bouc"
+    "Faille du Bouc" -> "Sentier des nains elphiques"
+
+    "Faille du Bouc" -> "Impasse du Grenier"
+    "Impasse du Grenier" -> "Faille du Bouc"
+
+    "Faille du Bouc" -> "Cave aux Axolotls"
+    "Cave aux Axolotls" -> "Faille du Bouc"
+    //"Cave aux Axolotls" -> "Faille du Bouc"
+
+    "Cave aux Axolotls" -> "Cité de La Géode"
+    "Cité de La Géode" -> "Cave aux Axolotls"
+
+    "Cave aux Axolotls" -> "Grotte des Empalés"
+    "Grotte des Empalés" -> "Cave aux Axolotls"
+
+    "Cité de La Géode" -> "Le Lac du Pêcheur"
+    "Cité de La Géode" -> "Fond'Comble"
+    "Cité de La Géode" -> "Forteresse de La Cascade"
+    "Mines"
+    "Forteresse de La Cascade" -> "Salle des Coffres"
+    "Forteresse de La Cascade" -> "Mines"
+    "Forteresse de La Cascade" -> "Cave de La Cascade"
+    "Cave de La Cascade" -> "Faille de La Rivière de Lave"
+    "Faille de La Rivière de Lave" -> "Enclos de La Rivière de Lave"
+    
+    "Cité de La Géode" -> "Faille des Abysses"
+    "Faille des Abysses" -> "Lac Écarlate"
+    "Lac Écarlate" -> "Ruelle Arachnée"
+    "Ruelle Arachnée" -> "Impasse Arachnée"
+    
+    "Faille des Abysses" -> "Lac Abyssal"
+    "Lac Abyssal" -> "Les Fondations de La Montagne"
+    "Les Fondations de La Montagne" -> "Cité de La Géode" [color=red]
+    "Grotte des Empalés" -> "Source des Roches Houilleuses" [color=red]
+    "Source des Roches Houilleuses" -> "Mines de Charbon" [color=red]
+    "Mines" -> "Mines de Charbon"
+    "Mines" -> "Mines de Fer"
+    "Mines de Fer" -> "La plus belle des caves"
+    "Mines de Fer" -> "Cité de La Géode"
+}

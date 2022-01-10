@@ -1,7 +1,5 @@
 graph {
     overlap = false;
-    "Cave de La Cascade" 
-    "Forteresse de La Cascade"
     "Cave de La Cascade" -- "Sentier des nains elphiques"
     "Sentier des nains elphiques" -- "Impasse du Puits Paumé"
     "Sentier des nains elphiques" -- "Faille du Bouc"
