@@ -1,51 +1,118 @@
+//Légende
+//Noir = Pas besoin d'aménagement
+//Vert = Aménagé
+//Rouge = Technique, à aménager
+//Bleu = Chute d'eau en descente
+//Bleu en pointillés = Chute d'eau en montée
+//Maron = Technique, ne seras pas aménagé
+//Maron tête courbée vers le corps = Technique, demande de casser et placer des blocs
 digraph {
     overlap = false;
     "Cité de La Géode" [shape=tripleoctagon]
 
-    "Cave de La Cascade" -> "Sentier des nains elphiques"
-    "Sentier des nains elphiques" -> "Cave de La Cascade"
+    "Cave de La Cascade" [color=green]
+    "Cave de La Cascade" -> "Sentier des nains elphiques" [color=brown]
+    "Sentier des nains elphiques" -> "Cave de La Cascade" [color=brown]
+    "Sentier des nains elphiques" [color=green]
 
-    "Sentier des nains elphiques" -> "Impasse du Puits Paumé"
-    "Impasse du Puits Paumé" -> "Sentier des nains elphiques"
+    "Impasse du Puits Paumé" [color=brown]
+    "Sentier des nains elphiques" -> "Impasse du Puits Paumé" [color=brown]
+    "Impasse du Puits Paumé" -> "Sentier des nains elphiques" [color=brown]
 
-    "Sentier des nains elphiques" -> "Faille du Bouc"
-    "Faille du Bouc" -> "Sentier des nains elphiques"
+    "Sentier des nains elphiques" -> "Faille du Bouc" [color=green]
+    "Faille du Bouc" -> "Sentier des nains elphiques" [color=green]
+    "Faille du Bouc" [color=green]
 
-    "Faille du Bouc" -> "Impasse du Grenier"
-    "Impasse du Grenier" -> "Faille du Bouc"
+    "Faille du Bouc" -> "Impasse du Grenier" [color=brown]
+    "Impasse du Grenier" -> "Faille du Bouc" [color=brown]
+    "Impasse du Grenier" [color=brown]
 
-    "Faille du Bouc" -> "Cave aux Axolotls"
-    "Cave aux Axolotls" -> "Faille du Bouc"
-    //"Cave aux Axolotls" -> "Faille du Bouc"
+    "Faille du Bouc" -> "Cave aux Axolotls" [color=green]
+    "Cave aux Axolotls" -> "Faille du Bouc" [color=green]
+    //"Cave aux Axolotls" -> "Faille du Bouc" [color=brown]
+    "Cave aux Axolotls" [color=green]
 
-    "Cave aux Axolotls" -> "Cité de La Géode"
-    "Cité de La Géode" -> "Cave aux Axolotls"
+    "Cave aux Axolotls" -> "Cité de La Géode" [color=green]
+    "Cité de La Géode" -> "Cave aux Axolotls" [color=green]
 
     "Cave aux Axolotls" -> "Grotte des Empalés"
     "Grotte des Empalés" -> "Cave aux Axolotls"
+    "Grotte des Empalés" [color=brown]
 
     "Cité de La Géode" -> "Le Lac du Pêcheur"
-    "Cité de La Géode" -> "Fond'Comble"
-    "Cité de La Géode" -> "Forteresse de La Cascade"
-    "Mines"
+    "Le Lac du Pêcheur" -> "Cité de La Géode"
+    "Le Lac du Pêcheur" [color=green]
+
+    "Cité de La Géode" -> "Fond'Comble" [color=green]
+    "Fond'Comble" -> "Cité de La Géode" [color=green]
+    "Fond'Comble" [color=green]
+
+    "Cité de La Géode" -> "Forteresse de La Cascade" [color=green]
+    "Forteresse de La Cascade" -> "Cité de La Géode" [color=green]
+    "Forteresse de La Cascade" [color=green]
+
     "Forteresse de La Cascade" -> "Salle des Coffres"
-    "Forteresse de La Cascade" -> "Mines"
-    "Forteresse de La Cascade" -> "Cave de La Cascade"
+    "Salle des Coffres" -> "Forteresse de La Cascade"
+    "Salle des Coffres" [color=green]
+
+    "Forteresse de La Cascade" -> "Mines" [color=green]
+    "Mines" -> "Forteresse de La Cascade" [color=green]
+    "Mines" [color=green]
+
+    "Forteresse de La Cascade" -> "Cave de La Cascade" [color=green]
+    "Cave de La Cascade" -> "Forteresse de La Cascade" [color=green]
+
     "Cave de La Cascade" -> "Faille de La Rivière de Lave"
-    "Faille de La Rivière de Lave" -> "Enclos de La Rivière de Lave"
+    "Faille de La Rivière de Lave" -> "Cave de La Cascade"
+
+    "Faille de La Rivière de Lave" -> "Enclos de La Rivière de Lave" [color=green]
+    "Enclos de La Rivière de Lave" -> "Faille de La Rivière de Lave" [color=green]
     
-    "Cité de La Géode" -> "Faille des Abysses"
+    "Cité de La Géode" -> "Faille des Abysses" [color=brown]
+    "Faille des Abysses" -> "Cité de La Géode" [color=brown]
+    "Faille des Abysses"
+
     "Faille des Abysses" -> "Lac Écarlate"
+    "Lac Écarlate" -> "Faille des Abysses"
+
     "Lac Écarlate" -> "Ruelle Arachnée"
+    "Ruelle Arachnée" -> "Lac Écarlate"
+
     "Ruelle Arachnée" -> "Impasse Arachnée"
+    "Impasse Arachnée" -> "Ruelle Arachnée"
     
     "Faille des Abysses" -> "Lac Abyssal"
-    "Lac Abyssal" -> "Les Fondations de La Montagne"
-    "Les Fondations de La Montagne" -> "Cité de La Géode" [color=red]
-    "Grotte des Empalés" -> "Source des Roches Houilleuses" [color=red]
-    "Source des Roches Houilleuses" -> "Mines de Charbon" [color=red]
-    "Mines" -> "Mines de Charbon"
-    "Mines" -> "Mines de Fer"
-    "Mines de Fer" -> "La plus belle des caves"
-    "Mines de Fer" -> "Cité de La Géode"
+    "Lac Abyssal" -> "Faille des Abysses"
+
+    "Lac Abyssal" -> "Les Fondations de La Montagne"[color=blue]
+    "Les Fondations de La Montagne" -> "Lac Abyssal" [color=blue style=dashed]
+
+    "Les Fondations de La Montagne" -> "Lieu non référencé" [color=red style=tapered]
+    "Lieu non référencé" -> "Cité de La Géode" [color=red]
+    "Cité de La Géode" -> "Lieu non référencé" [color=red]
+    "Lieu non référencé" -> "Les Fondations de La Montagne" [color = red]
+
+    "Cité de La Géode" -> "Les Fondations de La Montagne" [color = blue]
+
+    "Source des Roches Houilleuses" [color=brown]
+    "Source des Roches Houilleuses" -> "Grotte des Empalés" [color=blue]
+    "Grotte des Empalés" -> "Source des Roches Houilleuses" [color=blue style=dashed]
+
+    "Source des Roches Houilleuses" -> "Mines de Charbon" [color=brown arrowhead=curve]
+    "Mines de Charbon" -> "Source des Roches Houilleuses" [color=brown arrowhead=curve]
+
+    "Mines" -> "Mines de Charbon" [color=green]
+    "Mines de Charbon" -> "Mines" [color=green]
+    "Mines de Charbon" [color=green]
+
+    "Mines" -> "Mines de Fer" [color=green]
+    "Mines de Fer" -> "Mines" [color=green]
+    "Mines de Fer" [color=red]
+
+    "Mines de Fer" -> "La plus belle des caves" [color=red]
+    "La plus belle des caves" -> "Mines de Fer" [color=red]
+    "La plus belle des caves" [color=red]
+
+    "Mines de Fer" -> "Cité de La Géode" [color=blue style=dashed]
+    "Cité de La Géode" -> "Mines de Fer" [color=blue style=tapered]
 }
