@@ -24,12 +24,6 @@ pipeline {
         }
         
         stage('Deploy') {
-            when {
-                anyOf {
-                    branch 'master'
-                    buildingTag()
-                }
-            }
             steps {
                 sshagent(credentials: ['pk_webroot']) {
                     sh 'echo ${TAG_NAME:-${GIT_BRANCH#*/}}'
@@ -43,11 +37,24 @@ pipeline {
             }
             post {
                 success {
-                    discordSend title: "Nouvelles cartes", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH + "master", result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "master/cite-dot.png", webhookURL: env.WEBHOOK_URL
+                    discordSend title: "Nouvelles cartes 1/2", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH + "master", result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "master/cite-dot.png", webhookURL: env.WEBHOOK_URL
+                    discordSend title: "Nouvelles cartes 2/2", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH + "master", result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "master/oriente-cite-dot.png", webhookURL: env.WEBHOOK_URL
                 }
                 failure {
                     sh 'cat rsync-rel.log'
                 }
+            }
+        }
+
+        stage('Webhook Notification') {
+            when {
+                anyOf {
+                    branch 'master'
+                }
+            }
+            steps {
+                    discordSend title: "Nouvelles cartes 1/2", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH + "master", result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "master/cite-dot.png", webhookURL: env.WEBHOOK_URL
+                    discordSend title: "Nouvelles cartes 2/2", footer: currentBuild.durationString.replace(" and counting",""), link: env.WEBSITE + env.REL_PATH + "master", result: currentBuild.currentResult, image: env.WEBSITE + env.REL_PATH + "master/oriente-cite-dot.png", webhookURL: env.WEBHOOK_URL
             }
         }
     }
