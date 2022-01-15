@@ -34,7 +34,26 @@ digraph {
 
     "Cave aux Axolotls" -> "Cité de La Géode" [color=green]
     "Cité de La Géode" -> "Cave aux Axolotls" [color=green]
-
+    
+    "Cité de La Géode" -> "Descente de La Biroche"
+    "Descente de La Biroche" -> "Cité de La Géode"
+    
+    "Descente de La Biroche" -> "Vallée des Anciens" [color=red]
+    "Vallée des Anciens" -> "Descente de La Biroche" [color=red]
+    
+    "Vallée des Anciens" -> "Le Tartare" [style=invis]
+    "Le Tartare" [color=red]
+    
+    "Vallée des Anciens" -> "Les Fondations de La Montagne" [color=red]
+    "Les Fondations de La Montagne" -> "Vallée des Anciens" [color=red]
+    
+    
+    "Descente de La Biroche" -> "Eaux de source des Roches Houilleuses"
+    "Eaux de source des Roches Houilleuses" -> "Descente de La Biroche"
+    
+    "Eaux de source des Roches Houilleuses" -> "Source des Roches Houilleuses" [color=blue, style=dashed]
+    "Source des Roches Houilleuses" -> "Eaux de source des Roches Houilleuses" [color=blue]
+    
     "Cave aux Axolotls" -> "Grotte des Empalés"
     "Grotte des Empalés" -> "Cave aux Axolotls"
     "Grotte des Empalés" [color=brown]
@@ -42,6 +61,11 @@ digraph {
     "Cité de La Géode" -> "Le Lac du Pêcheur"
     "Le Lac du Pêcheur" -> "Cité de La Géode"
     "Le Lac du Pêcheur" [color=green]
+    
+    "Cité de La Géode" -> "Porte du Bastion"
+    "Porte du Bastion" -> "Cité de La Géode"
+    "Porte du Bastion" [color="red"]
+    
 
     "Cité de La Géode" -> "Fond'Comble" [color=green]
     "Fond'Comble" -> "Cité de La Géode" [color=green]
@@ -87,10 +111,10 @@ digraph {
     "Lac Abyssal" -> "Les Fondations de La Montagne"[color=blue]
     "Les Fondations de La Montagne" -> "Lac Abyssal" [color=blue style=dashed]
 
-    "Les Fondations de La Montagne" -> "Lieu non référencé" [color=red style=tapered]
-    "Lieu non référencé" -> "Cité de La Géode" [color=red]
-    "Cité de La Géode" -> "Lieu non référencé" [color=red]
-    "Lieu non référencé" -> "Les Fondations de La Montagne" [color = red]
+//     "Les Fondations de La Montagne" -> "Lieu non référencé" [color=red style=tapered]
+//     "Lieu non référencé" -> "Cité de La Géode" [color=red]
+//     "Cité de La Géode" -> "Lieu non référencé" [color=red]
+//     "Lieu non référencé" -> "Les Fondations de La Montagne" [color = red]
 
     "Cité de La Géode" -> "Les Fondations de La Montagne" [color = blue]
 
