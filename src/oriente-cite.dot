@@ -41,7 +41,8 @@ digraph {
     "Descente de La Biroche" -> "Vallée des Anciens" [color=red]
     "Vallée des Anciens" -> "Descente de La Biroche" [color=red]
     
-    "Vallée des Anciens" -> "Le Tartare" [style=invis]
+    "Vallée des Anciens" -> "Le Tartare" [color=brown]
+    "Le Tartare" -> "Vallée des Anciens" [color=brown]
     "Le Tartare" [color=red]
     
     "Vallée des Anciens" -> "Les Fondations de La Montagne" [color=red]
@@ -62,10 +63,13 @@ digraph {
     "Le Lac du Pêcheur" -> "Cité de La Géode"
     "Le Lac du Pêcheur" [color=green]
     
-    "Cité de La Géode" -> "Porte du Bastion"
-    "Porte du Bastion" -> "Cité de La Géode"
-    "Porte du Bastion" [color="red"]
+    "Cité de La Géode" -> "Bastion"
+    "Bastion" -> "Cité de La Géode"
+    "Bastion" [color="red"]
     
+    "Cité de La Géode" -> "Taverne de Lune"
+    "Taverne de Lune" -> "Cité de La Géode"
+    "Taverne de Lune" [color="red"]
 
     "Cité de La Géode" -> "Fond'Comble" [color=green]
     "Fond'Comble" -> "Cité de La Géode" [color=green]
